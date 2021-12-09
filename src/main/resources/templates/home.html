@@ -1,0 +1,45 @@
+
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="jumbotron mb-0">
+				<h1 class="display-4">Formulario</h1>
+			</div>
+
+			<form action="FormularioPessoaFisica">
+				<button type="submit">Cadastrar Cpf</button>
+			</form>
+			
+			<form action="FormularioPessoaJuridica">
+				<button type="submit">Cadastrar Cnpj</button>
+			</form>
+			
+			<h1>Cadastro CPF</h1>
+			<div class="card" th:each="pessoa : ${pessoasFisicas}">
+				<div class="card-body">
+					<div class="row">
+						<div>Nome</div>
+							<div>
+								<textarea class="form-control" th:text="${pessoa.Nome}"></textarea>
+							</div>
+					</div>
+				</div>
+			</div>
+			
+			<h1>Cadastro CNPJ</h1>
+			<div class="card" th:each="pessoa : ${pessoasJuridicas}">
+				<div class="card-body">
+					<div class="row">
+						<div>Nome</div>
+							<div>
+								<textarea class="form-control" th:text="${pessoa.Nome}"></textarea>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
